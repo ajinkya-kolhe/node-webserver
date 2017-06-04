@@ -55,7 +55,13 @@ app.get('/', (request, respnose) => {
 
 app.get('/about', (request, respnose) => {
   respnose.render('about.hbs', {
-    pageTitle: 'About Page',
+    pageTitle: 'About Page'
+  });
+});
+
+app.get('/projects', (request, respnose) => {
+  respnose.render('projects.hbs', {
+    pageTitle: 'Projects Page'
   });
 });
 
