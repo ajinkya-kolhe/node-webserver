@@ -2,6 +2,8 @@ const express = require('express');
 const hbs = require('hbs');
 const fs = require('fs');
 
+//Port for Heroku
+const port = process.env.PORT || 3000;
 var app = express();
 //console.log(__dirname);
 
@@ -25,9 +27,9 @@ app.use((request, respnose, next) => {
 });
 
 //Express middleware 2
-app.use((request, respnose, next) => {
-  respnose.render('maintenance.hbs');
-});
+// app.use((request, respnose, next) => {
+//   respnose.render('maintenance.hbs');
+// });
 
 //Express middleware 3
 //Static directory
@@ -65,6 +67,6 @@ app.get('/bad', (request, respnose) => {
 });
 
 //Port on which page will be displayed/rendered
-app.listen(3000, () => {
-  console.log('Server is up on 3000 port.');
+app.listen(port, () => {
+  console.log(`Server is up on ${port} port.`);
 });
